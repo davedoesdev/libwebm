@@ -1812,14 +1812,14 @@ class Segment {
   // File position offset where the Clusters end.
   int64_t cluster_end_offset_;
 
-  // List of clusters.
-  Cluster** cluster_list_;
+  // First cluster.
+  Cluster* first_cluster_;
 
-  // Number of cluster pointers allocated in the cluster list.
-  int32_t cluster_list_capacity_;
+  // Last cluster.
+  Cluster* last_cluster_;
 
-  // Number of clusters in the cluster list.
-  int32_t cluster_list_size_;
+  // Length of all clusters.
+  int64_t clusters_size_;
 
   // Indicates whether Cues should be written before or after Clusters
   CuesPosition cues_position_;
